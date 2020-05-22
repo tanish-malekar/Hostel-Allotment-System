@@ -47,6 +47,7 @@ void mergeSort(hostel arr[], int l, int r);
 void make_queue();
 void merge(hostel arr[], int l, int m, int r);
 void assign_hostel_room_availabilty();
+int modify_hostel_room_availability(int flag, char b, string r);
 
 
 void hostel::main_menu()
@@ -135,252 +136,7 @@ void hostel::add()
     cin>>b;
     cout<<"Enter the room type(1AC/1NAC/2AC/2NAC/3AC/3NAC/4AC/4NAC/6AC/6NAC): ";
     cin>>r;
-    if((b=='A')&&(r=="1AC")&&(A.AC1>0))
-        A.AC1 -= 1;
-    else if((b=='A')&&(r=="1NAC")&&(A.NAC1>0))
-        A.NAC1 -= 1;
-    else if((b=='A')&&(r=="2AC")&&(A.AC2>0))
-        A.AC2 -= 1;
-    else if((b=='A')&&(r=="2NAC")&&(A.NAC2>0))
-        A.NAC2 -= 1;
-    else if((b=='A')&&(r=="3AC")&&(A.AC3>0))
-        A.AC3 -= 1;
-    else if((b=='A')&&(r=="3NAC")&&(A.NAC3>0))
-        A.NAC3 -= 1;
-    else if((b=='A')&&(r=="4AC")&&(A.AC4>0))
-        A.AC4 -= 1;
-    else if((b=='A')&&(r=="4NAC")&&(A.NAC4>0))
-        A.NAC4 -= 1;
-    else if((b=='A')&&(r=="6AC")&&(A.AC6>0))
-        A.AC6 -= 1;
-    else if((b=='A')&&(r=="6NAC")&&(A.NAC6>0))
-        A.NAC6 -= 1;
-    else if((b=='B')&&(r=="1AC")&&(B.AC1>0))
-        B.AC1 -= 1;
-    else if((b=='B')&&(r=="1NAC")&&(B.NAC1>0))
-        B.NAC1 -= 1;
-    else if((b=='B')&&(r=="2AC")&&(B.AC2>0))
-        B.AC2 -= 1;
-    else if((b=='B')&&(r=="2NAC")&&(B.NAC2>0))
-        B.NAC2 -= 1;
-    else if((b=='B')&&(r=="3AC")&&(B.AC3>0))
-        B.AC3 -= 1;
-    else if((b=='B')&&(r=="3NAC")&&(B.NAC3>0))
-        B.NAC3 -= 1;
-    else if((b=='B')&&(r=="4AC")&&(B.AC4>0))
-        B.AC4 -= 1;
-    else if((b=='B')&&(r=="4NAC")&&(B.NAC4>0))
-        B.NAC4 -= 1;
-    else if((b=='B')&&(r=="6AC")&&(B.AC6>0))
-        B.AC6 -= 1;
-    else if((b=='B')&&(r=="6NAC")&&(B.NAC6>0))
-        B.NAC6 -= 1;
-    else if((b=='C')&&(r=="1AC")&&(C.AC1>0))
-        C.AC1 -= 1;
-    else if((b=='C')&&(r=="1NAC")&&(C.NAC1>0))
-        C.NAC1 -= 1;
-    else if((b=='C')&&(r=="2AC")&&(C.AC2>0))
-        C.AC2 -= 1;
-    else if((b=='C')&&(r=="2NAC")&&(C.NAC2>0))
-        C.NAC2 -= 1;
-    else if((b=='C')&&(r=="3AC")&&(C.AC3>0))
-        C.AC3 -= 1;
-    else if((b=='C')&&(r=="3NAC")&&(C.NAC3>0))
-        C.NAC3 -= 1;
-    else if((b=='C')&&(r=="4AC")&&(C.AC4>0))
-        C.AC4 -= 1;
-    else if((b=='C')&&(r=="4NAC")&&(C.NAC4>0))
-        C.NAC4 -= 1;
-    else if((b=='C')&&(r=="6AC")&&(C.AC6>0))
-        C.AC6 -= 1;
-    else if((b=='C')&&(r=="6NAC")&&(C.NAC6>0))
-        C.NAC6 -= 1;
-    else if((b=='D')&&(r=="1AC")&&(D.AC1>0))
-        D.AC1 -= 1;
-    else if((b=='D')&&(r=="1NAC")&&(D.NAC1>0))
-        D.NAC1 -= 1;
-    else if((b=='D')&&(r=="2AC")&&(D.AC2>0))
-        D.AC2 -= 1;
-    else if((b=='D')&&(r=="2NAC")&&(D.NAC2>0))
-        D.NAC2 -= 1;
-    else if((b=='D')&&(r=="3AC")&&(D.AC3>0))
-        D.AC3 -= 1;
-    else if((b=='D')&&(r=="3NAC")&&(D.NAC3>0))
-        D.NAC3 -= 1;
-    else if((b=='D')&&(r=="4AC")&&(D.AC4>0))
-        D.AC4 -= 1;
-    else if((b=='D')&&(r=="4NAC")&&(D.NAC4>0))
-        D.NAC4 -= 1;
-    else if((b=='D')&&(r=="6AC")&&(D.AC6>0))
-        D.AC6 -= 1;
-    else if((b=='D')&&(r=="6NAC")&&(D.NAC6>0))
-        D.NAC6 -= 1;
-    else if((b=='E')&&(r=="1AC")&&(E.AC1>0))
-        E.AC1 -= 1;
-    else if((b=='E')&&(r=="1NAC")&&(E.NAC1>0))
-        E.NAC1 -= 1;
-    else if((b=='E')&&(r=="2AC")&&(E.AC2>0))
-        E.AC2 -= 1;
-    else if((b=='E')&&(r=="2NAC")&&(E.NAC2>0))
-        E.NAC2 -= 1;
-    else if((b=='E')&&(r=="3AC")&&(E.AC3>0))
-        E.AC3 -= 1;
-    else if((b=='E')&&(r=="3NAC")&&(E.NAC3>0))
-        E.NAC3 -= 1;
-    else if((b=='E')&&(r=="4AC")&&(E.AC4>0))
-        E.AC4 -= 1;
-    else if((b=='E')&&(r=="4NAC")&&(E.NAC4>0))
-        E.NAC4 -= 1;
-    else if((b=='E')&&(r=="6AC")&&(E.AC6>0))
-        E.AC6 -= 1;
-    else if((b=='E')&&(r=="6NAC")&&(E.NAC6>0))
-        E.NAC6 -= 1;
-    else if((b=='F')&&(r=="1AC")&&(F.AC1>0))
-        F.AC1 -= 1;
-    else if((b=='F')&&(r=="1NAC")&&(F.NAC1>0))
-        F.NAC1 -= 1;
-    else if((b=='F')&&(r=="2AC")&&(F.AC2>0))
-        F.AC2 -= 1;
-    else if((b=='F')&&(r=="2NAC")&&(F.NAC2>0))
-        F.NAC2 -= 1;
-    else if((b=='F')&&(r=="3AC")&&(F.AC3>0))
-        F.AC3 -= 1;
-    else if((b=='F')&&(r=="3NAC")&&(F.NAC3>0))
-        F.NAC3 -= 1;
-    else if((b=='F')&&(r=="4AC")&&(F.AC4>0))
-        F.AC4 -= 1;
-    else if((b=='F')&&(r=="4NAC")&&(F.NAC4>0))
-        F.NAC4 -= 1;
-    else if((b=='F')&&(r=="6AC")&&(F.AC6>0))
-        F.AC6 -= 1;
-    else if((b=='F')&&(r=="6NAC")&&(F.NAC6>0))
-        F.NAC6 -= 1;
-    else if((b=='G')&&(r=="1AC")&&(G.AC1>0))
-        G.AC1 -= 1;
-    else if((b=='G')&&(r=="1NAC")&&(G.NAC1>0))
-        G.NAC1 -= 1;
-    else if((b=='G')&&(r=="2AC")&&(G.AC2>0))
-        G.AC2 -= 1;
-    else if((b=='G')&&(r=="2NAC")&&(G.NAC2>0))
-        G.NAC2 -= 1;
-    else if((b=='G')&&(r=="3AC")&&(G.AC3>0))
-        G.AC3 -= 1;
-    else if((b=='G')&&(r=="3NAC")&&(G.NAC3>0))
-        G.NAC3 -= 1;
-    else if((b=='G')&&(r=="4AC")&&(G.AC4>0))
-        G.AC4 -= 1;
-    else if((b=='G')&&(r=="4NAC")&&(G.NAC4>0))
-        G.NAC4 -= 1;
-    else if((b=='G')&&(r=="6AC")&&(G.AC6>0))
-        G.AC6 -= 1;
-    else if((b=='G')&&(r=="6NAC")&&(G.NAC6>0))
-        G.NAC6 -= 1;
-    else if((b=='H')&&(r=="1AC")&&(H.AC1>0))
-        H.AC1 -= 1;
-    else if((b=='H')&&(r=="1NAC")&&(H.NAC1>0))
-        H.NAC1 -= 1;
-    else if((b=='H')&&(r=="2AC")&&(H.AC2>0))
-        H.AC2 -= 1;
-    else if((b=='H')&&(r=="2NAC")&&(H.NAC2>0))
-        H.NAC2 -= 1;
-    else if((b=='H')&&(r=="3AC")&&(H.AC3>0))
-        H.AC3 -= 1;
-    else if((b=='H')&&(r=="3NAC")&&(H.NAC3>0))
-        H.NAC3 -= 1;
-    else if((b=='H')&&(r=="4AC")&&(H.AC4>0))
-        H.AC4 -= 1;
-    else if((b=='H')&&(r=="4NAC")&&(H.NAC4>0))
-        H.NAC4 -= 1;
-    else if((b=='H')&&(r=="6AC")&&(H.AC6>0))
-        H.AC6 -= 1;
-    else if((b=='H')&&(r=="6NAC")&&(H.NAC6>0))
-        H.NAC6 -= 1;
-    else if((b=='J')&&(r=="1AC")&&(J.AC1>0))
-        J.AC1 -= 1;
-    else if((b=='J')&&(r=="1NAC")&&(J.NAC1>0))
-        J.NAC1 -= 1;
-    else if((b=='J')&&(r=="2AC")&&(J.AC2>0))
-        J.AC2 -= 1;
-    else if((b=='J')&&(r=="2NAC")&&(J.NAC2>0))
-        J.NAC2 -= 1;
-    else if((b=='J')&&(r=="3AC")&&(J.AC3>0))
-        J.AC3 -= 1;
-    else if((b=='J')&&(r=="3NAC")&&(J.NAC3>0))
-        J.NAC3 -= 1;
-    else if((b=='J')&&(r=="4AC")&&(J.AC4>0))
-        J.AC4 -= 1;
-    else if((b=='J')&&(r=="4NAC")&&(J.NAC4>0))
-        J.NAC4 -= 1;
-    else if((b=='J')&&(r=="6AC")&&(J.AC6>0))
-        J.AC6 -= 1;
-    else if((b=='J')&&(r=="6NAC")&&(J.NAC6>0))
-        J.NAC6 -= 1;
-    else if((b=='K')&&(r=="1AC")&&(K.AC1>0))
-        K.AC1 -= 1;
-    else if((b=='K')&&(r=="1NAC")&&(K.NAC1>0))
-        K.NAC1 -= 1;
-    else if((b=='K')&&(r=="2AC")&&(K.AC2>0))
-        K.AC2 -= 1;
-    else if((b=='K')&&(r=="2NAC")&&(K.NAC2>0))
-        K.NAC2 -= 1;
-    else if((b=='K')&&(r=="3AC")&&(K.AC3>0))
-        K.AC3 -= 1;
-    else if((b=='K')&&(r=="3NAC")&&(K.NAC3>0))
-        K.NAC3 -= 1;
-    else if((b=='K')&&(r=="4AC")&&(K.AC4>0))
-        K.AC4 -= 1;
-    else if((b=='K')&&(r=="4NAC")&&(K.NAC4>0))
-        K.NAC4 -= 1;
-    else if((b=='K')&&(r=="6AC")&&(K.AC6>0))
-        K.AC6 -= 1;
-    else if((b=='K')&&(r=="6NAC")&&(K.NAC6>0))
-        K.NAC6 -= 1;
-    else if((b=='L')&&(r=="1AC")&&(L.AC1>0))
-        L.AC1 -= 1;
-    else if((b=='L')&&(r=="1NAC")&&(L.NAC1>0))
-        L.NAC1 -= 1;
-    else if((b=='L')&&(r=="2AC")&&(L.AC2>0))
-        L.AC2 -= 1;
-    else if((b=='L')&&(r=="2NAC")&&(L.NAC2>0))
-        L.NAC2 -= 1;
-    else if((b=='L')&&(r=="3AC")&&(L.AC3>0))
-        L.AC3 -= 1;
-    else if((b=='L')&&(r=="3NAC")&&(L.NAC3>0))
-        L.NAC3 -= 1;
-    else if((b=='L')&&(r=="4AC")&&(L.AC4>0))
-        L.AC4 -= 1;
-    else if((b=='L')&&(r=="4NAC")&&(L.NAC4>0))
-        L.NAC4 -= 1;
-    else if((b=='L')&&(r=="6AC")&&(L.AC6>0))
-        L.AC6 -= 1;
-    else if((b=='L')&&(r=="6NAC")&&(L.NAC6>0))
-        L.NAC6 -= 1;
-    else if((b=='Q')&&(r=="1AC")&&(Q.AC1>0))
-        Q.AC1 -= 1;
-    else if((b=='Q')&&(r=="1NAC")&&(Q.NAC1>0))
-        Q.NAC1 -= 1;
-    else if((b=='Q')&&(r=="2AC")&&(Q.AC2>0))
-        Q.AC2 -= 1;
-    else if((b=='Q')&&(r=="2NAC")&&(Q.NAC2>0))
-        Q.NAC2 -= 1;
-    else if((b=='Q')&&(r=="3AC")&&(Q.AC3>0))
-        Q.AC3 -= 1;
-    else if((b=='Q')&&(r=="3NAC")&&(Q.NAC3>0))
-        Q.NAC3 -= 1;
-    else if((b=='Q')&&(r=="4AC")&&(Q.AC4>0))
-        Q.AC4 -= 1;
-    else if((b=='Q')&&(r=="4NAC")&&(Q.NAC4>0))
-        Q.NAC4 -= 1;
-    else if((b=='Q')&&(r=="6AC")&&(Q.AC6>0))
-        Q.AC6 -= 1;
-    else if((b=='Q')&&(r=="6NAC")&&(Q.NAC6>0))
-        Q.NAC6 -= 1;
-    else
-    {
-        cout<<"Room  not available!!";
-        flag = 0;
-    }
-
+    flag = modify_hostel_room_availability(1, b, r);
 
     if(flag==1)
     {
@@ -540,6 +296,7 @@ void hostel::modify(string r)
     while(fin.read((char*)this,sizeof(hostel)))
     {
         if(reg_no==r){
+            modify_hostel_room_availability(0, block, roomtype);
             cout<<"\n Enter New Details:";
             cout<<"\nEnter the block: ";
             cin>>block;
@@ -552,6 +309,7 @@ void hostel::modify(string r)
             cout<<"Reg No: ";
             cin>>reg_no;
             fout.write((char*)this,sizeof(hostel));
+            modify_hostel_room_availability(1, block, roomtype);
             flag=1;
         }
         else{
@@ -588,14 +346,18 @@ void hostel::delete_rec(string r)
 
         {
 
-            cout<<"\n Room number: "<<room_no;
             cout<<"\n Name: "<<name;
             cout<<"\n Registration number: "<<reg_no;
+            cout<<"\n Room number: "<<room_no;
+            cout<<"\n Block: "<<block;
+            cout<<"\n Room type: "<<roomtype;
             cout<<"\n\n Do you want to delete this record(y/n): ";
             cin>>ch;
 
-            if(ch=='n')
+            if((ch=='n')||(ch=='N'))
                 fout.write((char*)this,sizeof(hostel));
+            else
+                modify_hostel_room_availability(0, block, roomtype);
             flag=1;
 
         }
@@ -706,13 +468,13 @@ void make_queue()
 {
     int i, n;
     system("cls");
-    cout<<"Enter the number of students: ";
+    cout<<"Enter the number of students(enter 0 if you just want to view or edit the records): ";
     cin>>n;
     hostel data[n];
     cout<<"\n\n";
 
-
-    cout<<"Enter the name, registration number and rank of students: "<<endl<<endl;
+    if(n!=0)
+        cout<<"Enter the name, registration number and rank of students: "<<endl<<endl;
     for(i=0; i<n; i++)
     {
         cout<<"Name: ";
@@ -748,6 +510,256 @@ void assign_hostel_room_availabilty()
     Q.AC1=0; Q.NAC1=0; Q.AC2=7; Q.NAC2=0; Q.AC3=4; Q.NAC3=0; Q.AC4=8; Q.NAC4=0; Q.AC6=9; Q.NAC6=0;
 }
 
+int modify_hostel_room_availability(int flag, char b, string r)
+{
+    int return_flag=1;
+    if((b=='A')&&(r=="1AC")&&(A.AC1>0||flag==0))
+        A.AC1  -= (flag==1)?(1):(-1) ;
+    else if((b=='A')&&(r=="1NAC")&&(A.NAC1>0||flag==0))
+        A.NAC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='A')&&(r=="2AC")&&(A.AC2>0||flag==0))
+        A.AC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='A')&&(r=="2NAC")&&(A.NAC2>0||flag==0))
+        A.NAC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='A')&&(r=="3AC")&&(A.AC3>0||flag==0))
+        A.AC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='A')&&(r=="3NAC")&&(A.NAC3>0||flag==0))
+        A.NAC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='A')&&(r=="4AC")&&(A.AC4>0||flag==0))
+        A.AC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='A')&&(r=="4NAC")&&(A.NAC4>0||flag==0))
+        A.NAC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='A')&&(r=="6AC")&&(A.AC6>0||flag==0))
+        A.AC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='A')&&(r=="6NAC")&&(A.NAC6>0||flag==0))
+        A.NAC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='B')&&(r=="1AC")&&(B.AC1>0||flag==0))
+        B.AC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='B')&&(r=="1NAC")&&(B.NAC1>0||flag==0))
+        B.NAC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='B')&&(r=="2AC")&&(B.AC2>0||flag==0))
+        B.AC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='B')&&(r=="2NAC")&&(B.NAC2>0||flag==0))
+        B.NAC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='B')&&(r=="3AC")&&(B.AC3>0||flag==0))
+        B.AC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='B')&&(r=="3NAC")&&(B.NAC3>0||flag==0))
+        B.NAC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='B')&&(r=="4AC")&&(B.AC4>0||flag==0))
+        B.AC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='B')&&(r=="4NAC")&&(B.NAC4>0||flag==0))
+        B.NAC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='B')&&(r=="6AC")&&(B.AC6>0||flag==0))
+        B.AC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='B')&&(r=="6NAC")&&(B.NAC6>0||flag==0))
+        B.NAC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='C')&&(r=="1AC")&&(C.AC1>0||flag==0))
+        C.AC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='C')&&(r=="1NAC")&&(C.NAC1>0||flag==0))
+        C.NAC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='C')&&(r=="2AC")&&(C.AC2>0||flag==0))
+        C.AC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='C')&&(r=="2NAC")&&(C.NAC2>0||flag==0))
+        C.NAC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='C')&&(r=="3AC")&&(C.AC3>0||flag==0))
+        C.AC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='C')&&(r=="3NAC")&&(C.NAC3>0||flag==0))
+        C.NAC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='C')&&(r=="4AC")&&(C.AC4>0||flag==0))
+        C.AC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='C')&&(r=="4NAC")&&(C.NAC4>0||flag==0))
+        C.NAC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='C')&&(r=="6AC")&&(C.AC6>0||flag==0))
+        C.AC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='C')&&(r=="6NAC")&&(C.NAC6>0||flag==0))
+        C.NAC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='D')&&(r=="1AC")&&(D.AC1>0||flag==0))
+        D.AC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='D')&&(r=="1NAC")&&(D.NAC1>0||flag==0))
+        D.NAC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='D')&&(r=="2AC")&&(D.AC2>0||flag==0))
+        D.AC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='D')&&(r=="2NAC")&&(D.NAC2>0||flag==0))
+        D.NAC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='D')&&(r=="3AC")&&(D.AC3>0||flag==0))
+        D.AC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='D')&&(r=="3NAC")&&(D.NAC3>0||flag==0))
+        D.NAC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='D')&&(r=="4AC")&&(D.AC4>0||flag==0))
+        D.AC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='D')&&(r=="4NAC")&&(D.NAC4>0||flag==0))
+        D.NAC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='D')&&(r=="6AC")&&(D.AC6>0||flag==0))
+        D.AC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='D')&&(r=="6NAC")&&(D.NAC6>0||flag==0))
+        D.NAC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='E')&&(r=="1AC")&&(E.AC1>0||flag==0))
+        E.AC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='E')&&(r=="1NAC")&&(E.NAC1>0||flag==0))
+        E.NAC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='E')&&(r=="2AC")&&(E.AC2>0||flag==0))
+        E.AC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='E')&&(r=="2NAC")&&(E.NAC2>0||flag==0))
+        E.NAC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='E')&&(r=="3AC")&&(E.AC3>0||flag==0))
+        E.AC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='E')&&(r=="3NAC")&&(E.NAC3>0||flag==0))
+        E.NAC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='E')&&(r=="4AC")&&(E.AC4>0||flag==0))
+        E.AC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='E')&&(r=="4NAC")&&(E.NAC4>0||flag==0))
+        E.NAC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='E')&&(r=="6AC")&&(E.AC6>0||flag==0))
+        E.AC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='E')&&(r=="6NAC")&&(E.NAC6>0||flag==0))
+        E.NAC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='F')&&(r=="1AC")&&(F.AC1>0||flag==0))
+        F.AC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='F')&&(r=="1NAC")&&(F.NAC1>0||flag==0))
+        F.NAC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='F')&&(r=="2AC")&&(F.AC2>0||flag==0))
+        F.AC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='F')&&(r=="2NAC")&&(F.NAC2>0||flag==0))
+        F.NAC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='F')&&(r=="3AC")&&(F.AC3>0||flag==0))
+        F.AC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='F')&&(r=="3NAC")&&(F.NAC3>0||flag==0))
+        F.NAC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='F')&&(r=="4AC")&&(F.AC4>0||flag==0))
+        F.AC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='F')&&(r=="4NAC")&&(F.NAC4>0||flag==0))
+        F.NAC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='F')&&(r=="6AC")&&(F.AC6>0||flag==0))
+        F.AC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='F')&&(r=="6NAC")&&(F.NAC6>0||flag==0))
+        F.NAC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='G')&&(r=="1AC")&&(G.AC1>0||flag==0))
+        G.AC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='G')&&(r=="1NAC")&&(G.NAC1>0||flag==0))
+        G.NAC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='G')&&(r=="2AC")&&(G.AC2>0||flag==0))
+        G.AC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='G')&&(r=="2NAC")&&(G.NAC2>0||flag==0))
+        G.NAC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='G')&&(r=="3AC")&&(G.AC3>0||flag==0))
+        G.AC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='G')&&(r=="3NAC")&&(G.NAC3>0||flag==0))
+        G.NAC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='G')&&(r=="4AC")&&(G.AC4>0||flag==0))
+        G.AC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='G')&&(r=="4NAC")&&(G.NAC4>0||flag==0))
+        G.NAC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='G')&&(r=="6AC")&&(G.AC6>0||flag==0))
+        G.AC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='G')&&(r=="6NAC")&&(G.NAC6>0||flag==0))
+        G.NAC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='H')&&(r=="1AC")&&(H.AC1>0||flag==0))
+        H.AC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='H')&&(r=="1NAC")&&(H.NAC1>0||flag==0))
+        H.NAC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='H')&&(r=="2AC")&&(H.AC2>0||flag==0))
+        H.AC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='H')&&(r=="2NAC")&&(H.NAC2>0||flag==0))
+        H.NAC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='H')&&(r=="3AC")&&(H.AC3>0||flag==0))
+        H.AC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='H')&&(r=="3NAC")&&(H.NAC3>0||flag==0))
+        H.NAC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='H')&&(r=="4AC")&&(H.AC4>0||flag==0))
+        H.AC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='H')&&(r=="4NAC")&&(H.NAC4>0||flag==0))
+        H.NAC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='H')&&(r=="6AC")&&(H.AC6>0||flag==0))
+        H.AC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='H')&&(r=="6NAC")&&(H.NAC6>0||flag==0))
+        H.NAC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='J')&&(r=="1AC")&&(J.AC1>0||flag==0))
+        J.AC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='J')&&(r=="1NAC")&&(J.NAC1>0||flag==0))
+        J.NAC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='J')&&(r=="2AC")&&(J.AC2>0||flag==0))
+        J.AC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='J')&&(r=="2NAC")&&(J.NAC2>0||flag==0))
+        J.NAC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='J')&&(r=="3AC")&&(J.AC3>0||flag==0))
+        J.AC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='J')&&(r=="3NAC")&&(J.NAC3>0||flag==0))
+        J.NAC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='J')&&(r=="4AC")&&(J.AC4>0||flag==0))
+        J.AC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='J')&&(r=="4NAC")&&(J.NAC4>0||flag==0))
+        J.NAC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='J')&&(r=="6AC")&&(J.AC6>0||flag==0))
+        J.AC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='J')&&(r=="6NAC")&&(J.NAC6>0||flag==0))
+        J.NAC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='K')&&(r=="1AC")&&(K.AC1>0||flag==0))
+        K.AC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='K')&&(r=="1NAC")&&(K.NAC1>0||flag==0))
+        K.NAC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='K')&&(r=="2AC")&&(K.AC2>0||flag==0))
+        K.AC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='K')&&(r=="2NAC")&&(K.NAC2>0||flag==0))
+        K.NAC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='K')&&(r=="3AC")&&(K.AC3>0||flag==0))
+        K.AC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='K')&&(r=="3NAC")&&(K.NAC3>0||flag==0))
+        K.NAC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='K')&&(r=="4AC")&&(K.AC4>0||flag==0))
+        K.AC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='K')&&(r=="4NAC")&&(K.NAC4>0||flag==0))
+        K.NAC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='K')&&(r=="6AC")&&(K.AC6>0||flag==0))
+        K.AC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='K')&&(r=="6NAC")&&(K.NAC6>0||flag==0))
+        K.NAC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='L')&&(r=="1AC")&&(L.AC1>0||flag==0))
+        L.AC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='L')&&(r=="1NAC")&&(L.NAC1>0||flag==0))
+        L.NAC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='L')&&(r=="2AC")&&(L.AC2>0||flag==0))
+        L.AC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='L')&&(r=="2NAC")&&(L.NAC2>0||flag==0))
+        L.NAC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='L')&&(r=="3AC")&&(L.AC3>0||flag==0))
+        L.AC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='L')&&(r=="3NAC")&&(L.NAC3>0||flag==0))
+        L.NAC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='L')&&(r=="4AC")&&(L.AC4>0||flag==0))
+        L.AC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='L')&&(r=="4NAC")&&(L.NAC4>0||flag==0))
+        L.NAC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='L')&&(r=="6AC")&&(L.AC6>0||flag==0))
+        L.AC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='L')&&(r=="6NAC")&&(L.NAC6>0||flag==0))
+        L.NAC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='Q')&&(r=="1AC")&&(Q.AC1>0||flag==0))
+        Q.AC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='Q')&&(r=="1NAC")&&(Q.NAC1>0||flag==0))
+        Q.NAC1 -= (flag==1)?(1):(-1) ;
+    else if((b=='Q')&&(r=="2AC")&&(Q.AC2>0||flag==0))
+        Q.AC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='Q')&&(r=="2NAC")&&(Q.NAC2>0||flag==0))
+        Q.NAC2 -= (flag==1)?(1):(-1) ;
+    else if((b=='Q')&&(r=="3AC")&&(Q.AC3>0||flag==0))
+        Q.AC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='Q')&&(r=="3NAC")&&(Q.NAC3>0||flag==0))
+        Q.NAC3 -= (flag==1)?(1):(-1) ;
+    else if((b=='Q')&&(r=="4AC")&&(Q.AC4>0||flag==0))
+        Q.AC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='Q')&&(r=="4NAC")&&(Q.NAC4>0||flag==0))
+        Q.NAC4 -= (flag==1)?(1):(-1) ;
+    else if((b=='Q')&&(r=="6AC")&&(Q.AC6>0||flag==0))
+        Q.AC6 -= (flag==1)?(1):(-1) ;
+    else if((b=='Q')&&(r=="6NAC")&&(Q.NAC6>0||flag==0))
+        Q.NAC6 -= (flag==1)?(1):(-1) ;
+    else
+    {
+        cout<<"Room  not available!!";
+        flag = 0;
+    }
+    return return_flag;
+}
 
 int main()
 {
@@ -771,6 +783,7 @@ int main()
     h.main_menu();
     return 0;
 }
+
 
 
 
