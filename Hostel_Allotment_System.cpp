@@ -9,6 +9,7 @@
 using namespace std;
 
 
+
 class room
 {
 public:
@@ -36,9 +37,11 @@ public:
     void edit();
     int check(string);
     void modify(string);
+
     void delete_rec(string);
 
 };
+
 
 
 queue <hostel> ranking;
@@ -290,7 +293,6 @@ int hostel::check(string r)
 
 void hostel::modify(string r)
 {
-
     int flag=0;
     ifstream fin("Record");
     ofstream fout("temp");
@@ -299,17 +301,15 @@ void hostel::modify(string r)
     {
         if(reg_no==r){
             modify_hostel_room_availability(0, block, roomtype);
-            cout<<"\n Enter New Details:";
-            cout<<"\nEnter the block: ";
+            cout<<endl;
+            displayTable();
+            cout<<"\nEnter New Details:";
+            cout<<"\n\nEnter the block: ";
             cin>>block;
             cout<<"Enter the room type(1AC/1NAC/2AC/2NAC/3AC/3NAC/4AC/4NAC/6AC/6NAC): ";
             cin>>roomtype;
             cout<<"Room no.: ";
             cin>>room_no;
-            cout<<"Name: ";
-            cin>>name;
-            cout<<"Reg No: ";
-            cin>>reg_no;
             fout.write((char*)this,sizeof(hostel));
             modify_hostel_room_availability(1, block, roomtype);
             flag=1;
@@ -760,7 +760,7 @@ int modify_hostel_room_availability(int flag, char b, string r)
     else
     {
         cout<<"Room  not available!!";
-        flag = 0;
+        return_flag = 0;
     }
     return return_flag;
 }
